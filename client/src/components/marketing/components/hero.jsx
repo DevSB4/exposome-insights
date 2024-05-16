@@ -80,7 +80,7 @@ export const HeroSection = () => {
                           Empower
                         </div>
                         <h3 className='text-3xl font-medium'>
-                          What is a Public Health Exposome Data Curators?
+                          What is a Public Health Exposome Data Curator?
                         </h3>
                         <div className='font-interLight'>
                           A Public Health Exposome Data Curator is an individual
