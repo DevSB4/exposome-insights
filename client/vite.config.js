@@ -21,6 +21,7 @@ import react from "@vitejs/plugin-react";
 //   },
 // });
 
+// Production
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -33,7 +34,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "https://exposome-insights.onrender.com",
+        target: "https://exposome-insights.onrender.com/",
         changeOrigin: true,
       },
     },
