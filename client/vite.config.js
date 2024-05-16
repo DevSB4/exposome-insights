@@ -33,7 +33,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "https://exposome-insights-server.vercel.app",
+        target: "https://exposome-insights.onrender.com",
         changeOrigin: true,
       },
     },
