@@ -4,7 +4,7 @@ require("dotenv").config();
 // Import dependencies
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors"); // Import CORS middleware
+const cors = require("cors");
 
 // Create the Express app and define Routes
 const app = express();
@@ -13,11 +13,6 @@ const userRoutes = require("./routes/userRoutes");
 
 // Middleware
 app.use(express.json());
-
-app.use((req, res, next) => {
-  console.log(req.path, req.method);
-  next();
-});
 
 // Enable CORS for all requests
 const allowedOrigins = [
@@ -38,6 +33,11 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
 
 // Mount the routes
 app.use("/api/tickets", ticketRoutes);
