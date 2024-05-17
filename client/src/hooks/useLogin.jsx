@@ -57,14 +57,14 @@ export const useLogin = () => {
 
       if (!response.ok) {
         const json = await response.json();
-        throw new Error(json.error || "Failed to login");
+        setError(json.error || "Failed to login");
+      } else {
+        const json = await response.json();
+        localStorage.setItem("user", JSON.stringify(json));
+        dispatch({ type: "LOGIN", payload: json });
       }
-
-      const json = await response.json();
-      localStorage.setItem("user", JSON.stringify(json));
-      dispatch({ type: "LOGIN", payload: json });
     } catch (error) {
-      setError(error.message || "An error occurred during login");
+      setError("An error occurred during login");
     } finally {
       setIsLoading(false);
     }
