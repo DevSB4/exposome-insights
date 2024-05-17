@@ -16,7 +16,6 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://exposome-insights.onrender.com/",
-        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
