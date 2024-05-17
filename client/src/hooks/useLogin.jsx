@@ -55,16 +55,16 @@ export const useLogin = () => {
         body: JSON.stringify({ email, password }),
       });
 
+      const json = await response.json();
+
       if (!response.ok) {
-        const json = await response.json();
-        setError(json.error || "Failed to login");
-      } else {
-        const json = await response.json();
-        localStorage.setItem("user", JSON.stringify(json));
-        dispatch({ type: "LOGIN", payload: json });
+        throw new Error(json.error || "Failed to login");
       }
+
+      localStorage.setItem("user", JSON.stringify(json));
+      dispatch({ type: "LOGIN", payload: json });
     } catch (error) {
-      setError("An error occurred during login");
+      setError(error.message || "An error occurred during login");
     } finally {
       setIsLoading(false);
     }
