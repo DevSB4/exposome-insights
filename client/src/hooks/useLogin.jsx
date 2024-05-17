@@ -49,22 +49,25 @@ export const useLogin = () => {
     setError(null);
 
     try {
-      const response = await fetch("/api/user/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const json = await response.json();
+      const response = await fetch(
+        "https://exposome-insights.onrender.com/api/user/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error(json.error || "Failed to login");
+        const json = await response.json();
+        setError(json.error || "Failed to login");
+      } else {
+        const json = await response.json();
+        localStorage.setItem("user", JSON.stringify(json));
+        dispatch({ type: "LOGIN", payload: json });
       }
-
-      localStorage.setItem("user", JSON.stringify(json));
-      dispatch({ type: "LOGIN", payload: json });
     } catch (error) {
-      setError(error.message || "An error occurred during login");
+      setError("An error occurred during login");
     } finally {
       setIsLoading(false);
     }
