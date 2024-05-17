@@ -56,7 +56,11 @@ app.use((req, res, next) => {
 });
 
 // Enable CORS for all requests
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:4000", "https://exposome-insights.onrender.com"],
+  })
+);
 
 // Mount the routes
 app.use("/api/tickets", ticketRoutes);
