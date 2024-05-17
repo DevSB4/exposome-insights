@@ -23,9 +23,11 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
+      console.log(`Origin: ${origin}`); // Log the origin
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
+        console.error(`Origin not allowed by CORS: ${origin}`); // Log the error
         callback(new Error("Origin not allowed by CORS"));
       }
     },
@@ -34,8 +36,9 @@ app.use(
   })
 );
 
+// Middleware to log request paths and methods
 app.use((req, res, next) => {
-  console.log(req.path, req.method);
+  console.log(`Request Path: ${req.path}, Method: ${req.method}`);
   next();
 });
 
@@ -51,6 +54,6 @@ startServer(app, PORT);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error(`Error: ${err.stack}`);
   res.status(500).send("Something went wrong!");
 });
