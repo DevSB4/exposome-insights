@@ -17,7 +17,7 @@ app.use(express.json());
 // Enable CORS for all requests
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://exposome-insights.onrender.com",
+  "https://exposome-insights.vercel.app",
 ];
 
 app.use(
