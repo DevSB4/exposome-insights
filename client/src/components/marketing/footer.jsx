@@ -146,7 +146,7 @@ export const Footer = () => {
                         </a>
                       </li>
                     ) : (
-                      <li key={linkIndex} className='hover:underline'>
+                      <li key={linkIndex} className='hover:underline '>
                         {link}
                       </li>
                     )

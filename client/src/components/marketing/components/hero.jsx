@@ -87,11 +87,11 @@ export const HeroSection = () => {
                           who is committed to using and leveraging exposome data
                           to enhance public health outcomes.
                         </div>
-                        <div className='font-interLight'>
+                        {/* <div className='font-interLight'>
                           They are adept at managing large datasets and are
                           committed to ensuring data integrity for the purposes
                           of research and policymaking.
-                        </div>
+                        </div> */}
                         <div className='font-interLight'>
                           Their expertise facilitates and helps derive
                           meaningful insights that inform strategic decisions to

@@ -30,10 +30,16 @@ const Dashboard = () => {
         <>
           <div
             className='text-2xl px-1 pb-3 mx-auto max-w-screen-xl text-left md:text-left'
-            tabIndex='0'
+            aria-label='Shows your first name'
           >
             {user ? (
-              `Hello, ${user.firstName}`
+              <p
+                className='focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 dark:focus-visible:ring-gray-50 rounded-md'
+                tabIndex='0'
+              >
+                {" "}
+                Hello, {user.firstName}
+              </p>
             ) : (
               <Skeleton className='w-48 h-[26px] rounded-sm' />
             )}
