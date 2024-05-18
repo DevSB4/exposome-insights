@@ -44,7 +44,7 @@ function App({ children }) {
                 />
                 <Route
                   path='/register'
-                  element={!user ? <Register /> : <Navigate to='/' />}
+                  element={!user ? <Register /> : <Navigate to='/dashboard' />}
                 />
                 <Route
                   path='/dashboard'
