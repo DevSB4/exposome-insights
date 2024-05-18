@@ -26,7 +26,7 @@ function App({ children }) {
     <>
       <ThemeProvider
         attribute='class'
-        defaultTheme='dark'
+        defaultTheme='light'
         enableSystem
         disableTransitionOnChange
         storageKey='main-theme'
