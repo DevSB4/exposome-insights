@@ -32,7 +32,7 @@ export function UserNav() {
           aria-label='User Menu'
         >
           <Avatar className='h-10 w-10'>
-            <span className='flex dark:border-none text-white bg-[#a90c2c] h-full w-full items-center justify-center rounded-full bg-muted'>
+            <span className='flex  dark:border-none text-white bg-[#a90c2c] h-full w-full items-center justify-center rounded-full'>
               {user.firstName.slice(0, 1)}
               {user.lastName.slice(0, 1)}
             </span>
