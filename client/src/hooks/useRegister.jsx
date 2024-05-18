@@ -5,6 +5,7 @@ export const useRegister = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
+  const navigate = useNavigate();
 
   const register = async (firstName, lastName, email, password) => {
     setIsLoading(true);
@@ -27,6 +28,7 @@ export const useRegister = () => {
       dispatch({ type: "LOGIN", payload: json });
 
       setIsLoading(false);
+      navigate("/dashboard");
     }
   };
 
