@@ -28,7 +28,10 @@ const Dashboard = () => {
     <>
       {showTicketData ? (
         <>
-          <div className='text-2xl px-1 pb-3 mx-auto max-w-screen-xl text-left md:text-left'>
+          <div
+            className='text-2xl px-1 pb-3 mx-auto max-w-screen-xl text-left md:text-left'
+            tabIndex='0'
+          >
             {user ? (
               `Hello, ${user.firstName}`
             ) : (
