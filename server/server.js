@@ -57,8 +57,3 @@ app.use((err, req, res, next) => {
   console.error(`Error: ${err.stack}`);
   res.status(500).send("Something went wrong!");
 });
-
-// Handle any other routes by serving the React app's main HTML file
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
