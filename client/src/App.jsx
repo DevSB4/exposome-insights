@@ -18,6 +18,8 @@ import ScrollToTopButton from "./hooks/scroll-to-top-button";
 import PrivacyPolicy from "./pages/privacy-policy";
 import TermsOfService from "./pages/terms-of-service";
 import { useAuthContext } from "./hooks/useAuthContext";
+import NotFoundPage from "./pages/not-found";
+import Error from "./pages/error";
 
 function App({ children }) {
   const { user } = useAuthContext();
@@ -52,6 +54,8 @@ function App({ children }) {
                 />
                 <Route path='/privacy-policy' element={<PrivacyPolicy />} />
                 <Route path='/terms-of-service' element={<TermsOfService />} />
+                <Route path='/error' element={<Error />} />{" "}
+                <Route path='*' element={<NotFoundPage />} />
               </Routes>
               {children}
             </div>

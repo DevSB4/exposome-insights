@@ -175,14 +175,14 @@ const TicketData = () => {
     <>
       <div className='order-last md:order-first lg:order-first'>
         {error && (
-          <Card className='alert-message dark:bg-[#242424]'>
+          <div className='error-message'>
             <span className='flex uppercase px-2 py-1 mr-1'>
               <ShieldAlert />
             </span>
             <span className='font-bold text-sm text-left flex-auto'>
               {error}
             </span>
-          </Card>
+          </div>
         )}
 
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
