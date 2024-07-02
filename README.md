@@ -60,6 +60,3 @@ Contributions to the Ticketing System Project are welcome! If you find any issue
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-# exposome-insights
-# -exposome-insights
-# -exposome-insights
